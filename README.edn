@@ -1,1 +1,6 @@
-{:schema "etzhayyim.repository/v1" :name "com-etzhayyim-app-public-kafun-bokumetsu" :kind :app :canonical-metadata :edn}
+{:schema "etzhayyim.repository/v1"
+ :name "app-public-kafun-bokumetsu"
+ :kind :app
+ :canonical-metadata :edn
+ :boundary {:role :public-pollen-eradication-application
+            :subject-authority "etzhayyim/com-etzhayyim-kafun"}}
