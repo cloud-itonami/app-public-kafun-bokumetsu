@@ -14,7 +14,7 @@
 ;; not as "CLAUDE.md is stale" -- so implementing the missing methods, or deleting the
 ;; table, both fail here and force the prose to move with the tree.
 ;;
-;; Usage:  nbb scripts/verify-docs-claims.cljs [<dir>]     (<dir> FIRST, default ".")
+;; Usage:  nbb scripts/verify-docs-claims.cljk [<dir>]     (<dir> FIRST, default ".")
 ;; Exit:   0 every claim holds · 1 a claim is false · 2 could not answer
 
 (require '["node:fs" :as fs]
