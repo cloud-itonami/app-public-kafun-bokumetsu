@@ -9,7 +9,7 @@ appview の骨組み 1 枚である。**
 
 `etzhayyim/root` の `60-apps/etzhayyim-project-public-kafun-bokumetsu` からの
 抽出物で、**tree は移行元と 1 バイトも違わない**（下記「持ち出しは完全である」）。
-数字はすべて `scripts/verify-docs-claims.cljs` が tree から再計算して検査する。
+数字はすべて `scripts/verify-docs-claims.cljk` が tree から再計算して検査する。
 
 ## tree に在るもの（24 ファイル）
 
@@ -100,7 +100,7 @@ README.md / docs/ / scripts/ ← この 3 件だけが移行後の追加（本�
 ## 検証
 
 ```bash
-nbb scripts/verify-docs-claims.cljs .      # <dir> は先頭に置く
+nbb scripts/verify-docs-claims.cljk .      # <dir> は先頭に置く
 ```
 
 この README と quickstart が言う数字を tree から**測り直す**。

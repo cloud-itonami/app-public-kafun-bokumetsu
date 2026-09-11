@@ -2,7 +2,7 @@
 
 **この文書の手順は全部実際に踏んである。** 踏めなかったものは「踏めない」と
 書いてあり、そのときの正確な失敗も一緒に置いてある（測れなかったことを
-成功と区別するため）。数字は `scripts/verify-docs-claims.cljs` が測り直す。
+成功と区別するため）。数字は `scripts/verify-docs-claims.cljk` が測り直す。
 
 所要: 手順 1 が数秒、手順 2 が npm ≥ 11.17 の機械で 1〜2 分。
 
@@ -36,7 +36,7 @@ git -C "$SRC" ls-tree -r -l "$REV" -- "$P" | awk '{s+=$4} END {print s}'   # →
 
 実測（2026-08-19）: 3 つとも `migration.edn` の申告と一致し、**19 個の blob hash も
 全部同一**、追加は `README.edn` と `migration.edn` のちょうど 2 件だった。
-`scripts/verify-docs-claims.cljs` はこの検算を移行元 checkout が無くても
+`scripts/verify-docs-claims.cljk` はこの検算を移行元 checkout が無くても
 できる範囲（ファイル数・追加集合・自リポ側の byte 合計）で毎回やり直す。
 
 ## 2. テストを回す
@@ -106,7 +106,7 @@ cp -R /tmp/vt/node_modules/. node_modules/
 ## 3. 検証器を回す
 
 ```bash
-nbb scripts/verify-docs-claims.cljs .
+nbb scripts/verify-docs-claims.cljk .
 ```
 
 `<dir>` は**引数の先頭**に置く（多くの gate が「`--` で始まらない最初の引数」を
