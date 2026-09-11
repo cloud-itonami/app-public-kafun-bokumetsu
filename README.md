@@ -100,7 +100,7 @@ README.md / docs/ / scripts/ ← この 3 件だけが移行後の追加（本�
 ## 検証
 
 ```bash
-nbb scripts/verify-docs-claims.cljk .      # <dir> は先頭に置く
+kbb --backend sci scripts/verify-docs-claims.cljk .      # <dir> は先頭に置く
 ```
 
 この README と quickstart が言う数字を tree から**測り直す**。
