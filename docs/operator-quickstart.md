@@ -106,7 +106,7 @@ cp -R /tmp/vt/node_modules/. node_modules/
 ## 3. 検証器を回す
 
 ```bash
-nbb scripts/verify-docs-claims.cljk .
+kbb --backend sci scripts/verify-docs-claims.cljk .
 ```
 
 `<dir>` は**引数の先頭**に置く（多くの gate が「`--` で始まらない最初の引数」を
