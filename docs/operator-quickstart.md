@@ -17,7 +17,7 @@ git ls-files | grep -cE '^(README\.md|docs/|scripts/)'   # 3 ← 移行後に足
 ```
 
 `kotoba/` 以外はまだ足場である（`README.md` の表を先に読むこと ——
-`CLAUDE.md` は移行元の文書で、tree に無いものを在るものとして書いている）。
+`AGENTS.md` は移行元の文書で、tree に無いものを在るものとして書いている）。
 
 ## 1. 持ち出しが完全であることを自分で確かめる
 
@@ -122,7 +122,7 @@ tree として読むので、後ろに置くとフラグの値がパスとして
 |---|---|
 | appview を build / deploy | `svelte/package.json` が `@etzhayyim/design-system: workspace:*` に依存する。monorepo 外では解決しない |
 | `component.wasm` を配る | `kotodama.jsonld` が指すが tree に無い |
-| `agent.tick` を cron で回す | `CLAUDE.md` が言う `k8s/cronjob.yaml` が tree に無い |
+| `agent.tick` を cron で回す | `AGENTS.md` が言う `k8s/cronjob.yaml` が tree に無い |
 | `fund.*` / `evolution.*` を呼ぶ | 表には 11 行在るが**実装が 1 文字も無い**。表を消すか実装するかはオーナーの決定 |
 
 これらは移行が壊したものではない（移行は 19 ファイルを 1 バイトも変えていない）。

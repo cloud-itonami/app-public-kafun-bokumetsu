@@ -9,9 +9,9 @@
 ;; checkout, by pinning each inherited file's sha256 -- so a later silent edit to an
 ;; "unchanged" file fails here even on a machine that has never seen etzhayyim/root.
 ;;
-;; The second claim is that CLAUDE.md describes a system this tree does not contain.
+;; The second claim is that AGENTS.md describes a system this tree does not contain.
 ;; That is asserted as a COUNT ON BOTH SIDES (23 documented methods vs 3 registered),
-;; not as "CLAUDE.md is stale" -- so implementing the missing methods, or deleting the
+;; not as "AGENTS.md is stale" -- so implementing the missing methods, or deleting the
 ;; table, both fail here and force the prose to move with the tree.
 ;;
 ;; Usage:  kbb --backend sci scripts/verify-docs-claims.cljk [<dir>]     (<dir> FIRST, default ".")
@@ -33,7 +33,7 @@
    :allowed-additions      #{"README.edn" "migration.edn"}
    :migration-tree         "bd42c6d6a555e9e2f06fc98db4d2d367833cb5b8"
    :migration-revision     "168497bd668c8d081fbeb32a0df24d9514075686"
-   ;; CLAUDE.md's XRPC table vs what app.ts actually registers
+   ;; AGENTS.md's XRPC table vs what app.ts actually registers
    :documented-methods     23
    :documented-fund-rows   9
    :documented-evolution-rows 2
@@ -50,7 +50,7 @@
 ;; The 19 files migration.edn says arrived unchanged. Pinned by content so that
 ;; "unchanged" stays a checkable statement offline.
 (def inherited
-  {"CLAUDE.md" "8c42fc08b4e5b970dfb588dad771ef5ebff1929cdc6458a49ce5f169e17a3465"
+  {"AGENTS.md" "8c42fc08b4e5b970dfb588dad771ef5ebff1929cdc6458a49ce5f169e17a3465"
    "appview/etzhayyim-wasm-kafun-bokumetsu-n97ik10n/kotodama.jsonld" "2dffd6df53d81998234c5ad4f30152efc240133c10a0504a2e3c7f6e4b9eb1ec"
    "appview/etzhayyim-wasm-kafun-bokumetsu-n97ik10n/src/app.ts" "cc641566e2040cc3cb3ad7993dd68d2c824dd0428cd5ef6838dae42f51667ddf"
    "appview/etzhayyim-wasm-kafun-bokumetsu-n97ik10n/svelte/index.html" "8d3614a8fb6d235b207049901435572abd451b3f2893acf027ce0f017449f9c3"
@@ -134,11 +134,11 @@
 (doseq [a (:allowed-additions claims)]
   (check! (str "addition-present:" a) true (exists? a)))
 
-;; ── CLAUDE.md documents a system this tree does not contain ─────────
-(let [c (slurp* "CLAUDE.md")
+;; ── AGENTS.md documents a system this tree does not contain ─────────
+(let [c (slurp* "AGENTS.md")
       a (slurp* "appview/etzhayyim-wasm-kafun-bokumetsu-n97ik10n/src/app.ts")]
   (if (or (nil? c) (nil? a))
-    (undet! "CLAUDE.md or app.ts unreadable")
+    (undet! "AGENTS.md or app.ts unreadable")
     (let [rows (re-seq #"(?m)^\| `([a-z_]+)\.[a-z_]+` *\|" c)
           by-prefix (frequencies (map second rows))
           nsids (set (map second (re-seq #"nsid\(\"(com\.etzhayyim\.apps\.kafun\.[a-z.]+)\"\)" a)))]
