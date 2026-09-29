@@ -11,7 +11,7 @@
  *   com.etzhayyim.apps.kafun.agent.tick     → kafun.tick.v1     → vertex_kafun_action  (+ optional follow-on)
  *
  * No business logic lives here — this Worker is a 3-tier-write thin
- * dispatcher per `60-apps/CLAUDE.md` §App Implementation Pattern.
+ * dispatcher per `60-apps/AGENTS.md` §App Implementation Pattern.
  *
  * Public-by-default policy:
  *   *Every* externally visible activity (research findings, proposals,
@@ -133,7 +133,7 @@ async function sendEmailAndPublish(
 ): Promise<void> {
   // Outbound mail goes through the microsoft.etzhayyim.com actor (`com.etzhayyim.apps.microsoft.sendMail`).
   // Direct dispatch is intentional — we route through host-imports invoke so the
-  // microsoft actor handles tenant binding (root CLAUDE.md §etzhayyim Agent).
+  // microsoft actor handles tenant binding (root AGENTS.md §etzhayyim Agent).
   const params = { to: [to], subject, body };
   const paramsJson = JSON.stringify(params);
   try {

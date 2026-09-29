@@ -25,7 +25,7 @@ appview/etzhayyim-wasm-kafun-bokumetsu-n97ik10n/
   kotodama.jsonld              actor 宣言
   svelte/                      Vite の足場（App.svelte は 455 B）
 
-CLAUDE.md                    ← 移行元から持ってきた文書。下記のとおり現状と合わない
+AGENTS.md                    ← 移行元から持ってきた文書。下記のとおり現状と合わない
 README.edn / migration.edn   ← 移行が足すことを許した 2 件だけ
 
 README.md / docs/ / scripts/ ← この 3 件だけが移行後の追加（本文書と検証器）
@@ -46,12 +46,12 @@ README.md / docs/ / scripts/ ← この 3 件だけが移行後の追加（本�
 `setActionStatus` は `done` / `cancelled` を終端として扱い、そこから戻す遷移を
 `rejected` にする。`coverage` は 3 collection を走査して数える（`maxScan` 上限つき）。
 
-## ⚠ CLAUDE.md はこの repo を説明していない
+## ⚠ AGENTS.md はこの repo を説明していない
 
-`CLAUDE.md` は移行元 monorepo の文書がそのまま来たもので、**tree に無いものを
+`AGENTS.md` は移行元 monorepo の文書がそのまま来たもので、**tree に無いものを
 在るものとして書いている**。読む前に次を知っておくこと（すべて実測）:
 
-| CLAUDE.md の記述 | この tree の実際 |
+| AGENTS.md の記述 | この tree の実際 |
 |---|---|
 | XRPC メソッド表 **23 行**（`agent.*` 7 / `fund.*` 9 / `cap.*` 5 / `evolution.*` 2） | `app.ts` が登録するのは **3 つ**（`agent.research` / `agent.think` / `agent.tick`）。`fund.*` と `evolution.*` は**コードに 1 文字も無い** |
 | build 手順が `wasm/etzhayyim-wasm-…` に `cd` する | そのディレクトリは無い。**移行元にも無かった** —— 実際は `appview/…`（移行の改名ではない） |
